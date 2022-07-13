@@ -1,11 +1,38 @@
-local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/S3nKeTsu/new-lib/main/lib"))()
 
-local MainUI = UILibrary.Load(string Title)
-local FirstPage = MainUI.AddPage(string PageTitle, bool IncludeSearchBar = true)
 
-local FirstLabel = FirstPage.AddLabel(string Text)
-local FirstButton = FirstPage.AddButton(string Text, function Callback)
-local FirstToggle = FirstPage.AddToggle(string Text, bool Default, function Callback)
-local FirstSlider = FirstPage.AddSlider(string Text, table Configuration, function Callback)
-local FirstPicker = FirstPage.AddColourPicker(string Text, variant<string/table/color3> DefaultColour, function Callback)
-local FirstDropdown = FirstPage.AddDropdown(string Text, table Options, function Callback)
+local Luxt = loadstring(game:HttpGet("https://raw.githubusercontent.com/S3nKeTsu/new-lib/main/lib"))()
+
+local Luxt = Luxtl.CreateWindow("Wisteria GUI" )
+
+local mainTab = Luxt:Tab("PLayer")
+local teleportsTab = Luxt:Tab("Teleports")
+local ScriptTab = Luxt:Tab("Scrips")
+local creditsTab = Luxt:Tab("Credits")
+local cf = creditsTab:Section("Main Credits")
+cf:Credit("by 9Dabour6")
+local cf1 = creditsTab:Section("UI Credits")
+cf1:Credit("xHeptc: UI Library")
+local cf2 = creditsTab:Section("Helping Credits")
+cf2:Credit("Salad: Helping")
+
+local Examples = Luxt:Tab("Examples")
+local ff = Examples:Section("All Examples")
+ff:Label("Welcome to Wisteria GUI")
+ff:Button("TextButton Text", function()
+    print("Clicked!")
+end)
+ff:Toggle("Toggle Me!", function(isToggled)
+    print(isToggled) -- prints true or false
+end)
+ff:KeyBind("Print('Hey') on bind", Enum.KeyCode.R, function() --Enum.KeyCode.R is starting Key
+    print('Hey')
+end)
+ff:TextBox("TextBox Info", "Epic PlaceHolder", function(getText)
+    print(getText) -- Prints whatever player types
+end)
+ff:Slider("WalkSpeed", 16, 503, function(currentValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = currentValue
+end)
+ff:DropDown("Favorite Food?", {"Pizza", "Burger", "Sandwiches"}, function(food) -- food is chosen item
+    print(food)
+end)
