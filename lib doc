@@ -1,4 +1,4 @@
-local UILibrary = loadstring(game:HttpGet("https://pastebin.com/raw/V1ca2q9s"))()
+local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/S3nKeTsu/new-lib/main/lib"))()
 
 local MainUI = UILibrary.Load(string Title)
 local FirstPage = MainUI.AddPage(string PageTitle, bool IncludeSearchBar = true)
